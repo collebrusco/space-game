@@ -1,9 +1,9 @@
-[submodule "risklike/flgl"]
-	path = risklike/flgl
-	url = https://github.com/collebrusco/flgl
 [submodule "risklike/ecs"]
-	path = risklike/ecs
+	path = risklike/lib/ecs
 	url = https://github.com/collebrusco/entity-mini
 [submodule "risklike/sw"]
-	path = risklike/sw
+	path = risklike/lib/sw
 	url = https://github.com/collebrusco/stopwatch
+[submodule "risklike/flgl"]
+	path = risklike/lib/flgl
+	url = https://github.com/collebrusco/flgl

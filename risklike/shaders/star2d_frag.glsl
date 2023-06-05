@@ -16,11 +16,12 @@ in vec3 iPos;
 uniform float uTime;
 uniform vec2 uRes;
 uniform float uAspect;
+uniform float uRotation;
 
 uniform vec2 uGamePos;
 
 vec2 n_res = gl_FragCoord.xy / uRes;
-vec2 i_res = vec2(n_res.x * uAspect, n_res.y);
+vec2 i_res = (vec2(n_res.x * uAspect, n_res.y) - vec2(uAspect / 2, 0.5));// * mat2(vec2(cos(-uRotation), sin(-uRotation)), vec2(-sin(-uRotation), cos(-uRotation)));
 
 float rand(vec2 co){
     return sin(dot(co, vec2(12.9898, 78.233)) * 43758.5453);
@@ -65,10 +66,17 @@ vec2 gradient(int x, int y, float speed){
     return vec2(cos(theta+(uTime*speed)), sin(theta+(uTime*speed)));
 }
 
-float perlin(vec2 pos, float rotation, vec2 offset, vec2 scale){
+float perlin(vec2 pos, float rotation, vec2 offset, vec2 scale, float cam_rotation) {
     // translate, scale
     pos += offset;
     pos *= scale;
+    
+//    vec2 d = vec2(0.5 * uAspect, 0.5) + offset + uGamePos;
+//
+//    float nx =      ((pos.x - d.x) * cos(cam_rotation)) - ((d.y - pos.y) * sin(cam_rotation)) + d.x;
+//    float ny =      ((d.y - pos.y) * cos(cam_rotation)) + ((pos.x - d.x) * sin(cam_rotation)) + d.y;
+//
+//    pos.x = nx; pos.y = ny;
     
     // establish grid
     int x0 = int(floor(pos.x));
@@ -92,6 +100,10 @@ float perlin(vec2 pos, float rotation, vec2 offset, vec2 scale){
     return (interp(interp(BL, BR, pos.x - floor(pos.x)), interp(TL, TR, pos.x - floor(pos.x)), pos.y - floor(pos.y)) * 0.5) + 0.5;
 }
 
+float perlin(vec2 pos, float rotation, vec2 offset, vec2 scale) {
+    return perlin(pos, rotation, offset, scale, 0);
+}
+
 float perlin(vec2 pos, float rotation, vec2 offset){
     return perlin(pos, rotation, offset, vec2(1));
 }
@@ -105,29 +117,16 @@ float perlin(vec2 pos){
 }
 
 void main(){
-//    float noise = 0;
-//    for (int i = 0; i < 5; i++){
-//        float layer = perlin(i_res * 4., 3., uGamePos * i, vec2(float(i)+1.));
-//        if (layer > 0.7){
-//            noise = min(1, noise + perlin(i_res * 4, 3, uGamePos));
-//        }
-//    }
-//    if (noise > 0.7){
-//        outColor = vec4(1.);
-//    } else {
-//        discard;
-//    }
-// snow
     vec4 clr = vec4(1.);
     for (int i = 1; i < 5; i++){
-        float sn = perlin(i_res * 10 * i, 0.02, uGamePos * float(i), vec2(float(i+1) * 2.));
+        float sn = perlin(i_res * 10 * i, 0.02, (uGamePos + vec2(0.5)) * float(i), vec2(float(i+1) * 2.), uRotation);
         clr.xyz = vec3(0);
         if (sn > 0.7){
             clr.xyz = vec3(1.f);//mix(clr.xyz, vec3(1.f), (sn*sn)/0.81);
         }
     }
-//    if (clr.xyz != vec3(1.)){ // remove if want to shade space
-//        discard;
-//    }
+    if (clr.xyz != vec3(1.)){ // remove if want to shade space
+        discard;
+    }
     outColor = clr;
 }
