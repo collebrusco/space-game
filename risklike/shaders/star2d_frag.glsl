@@ -144,7 +144,7 @@ float green_noise(float m, float dist) {
     return m * (res / i);
 }
 
-#define STAR_COLOR vec4(0.7f, 0.7f, 0.69f, 1.f)
+#define STAR_COLOR (vec4(0.7f, 0.7f, 0.69f, 1.f) * (perlin(i_res * 50.f, 0.2f) + 0.3))
 bool star() {
 //    float sn = 0;
 //    int i;
@@ -200,8 +200,6 @@ void main(){
         clr.b = blue_noise(0.1f * bt, 4.f);
         clr.xyz = max(vec3(0.f), clr.xyz - 0.15);
     }
-//    if (clr.xyz != vec3(1.)){ // remove if want to shade space
-//        discard;
-//    }
+    
     outColor = clr;
 }

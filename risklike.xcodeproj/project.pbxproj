@@ -26,6 +26,7 @@
 		4C21CB222A2D7DEB00DD20BE /* follower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB212A2D7DEB00DD20BE /* follower.cpp */; };
 		4C21CB252A2D823800DD20BE /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB242A2D823800DD20BE /* State.cpp */; };
 		4C21CB2A2A2EBDD300DD20BE /* ShipTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB292A2EBDD300DD20BE /* ShipTypes.cpp */; };
+		4C21CB342A302C3F00DD20BE /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB332A302C3F00DD20BE /* GameEngine.cpp */; };
 		4C39E7732A2A8E9A00CFC7EB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C39E7722A2A8E9A00CFC7EB /* main.cpp */; };
 		4C39E77B2A2A8EAC00CFC7EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77A2A2A8EAC00CFC7EB /* OpenGL.framework */; };
 		4C39E77D2A2A8EB000CFC7EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77C2A2A8EB000CFC7EB /* CoreGraphics.framework */; };
@@ -113,6 +114,8 @@
 		4C21CB282A2EBDD300DD20BE /* ShipTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipTypes.h; sourceTree = "<group>"; };
 		4C21CB292A2EBDD300DD20BE /* ShipTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShipTypes.cpp; sourceTree = "<group>"; };
 		4C21CB2B2A2ED98400DD20BE /* renderer_enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = renderer_enums.h; sourceTree = "<group>"; };
+		4C21CB322A302C3F00DD20BE /* GameEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		4C21CB332A302C3F00DD20BE /* GameEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameEngine.cpp; sourceTree = "<group>"; };
 		4C39E76F2A2A8E9A00CFC7EB /* risklike */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = risklike; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C39E7722A2A8E9A00CFC7EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4C39E77A2A2A8EAC00CFC7EB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -313,6 +316,8 @@
 				4C39E7C42A2A9CC200CFC7EB /* assets */,
 				4C39E7C62A2AA04E00CFC7EB /* shaders */,
 				4C39E7722A2A8E9A00CFC7EB /* main.cpp */,
+				4C21CB322A302C3F00DD20BE /* GameEngine.h */,
+				4C21CB332A302C3F00DD20BE /* GameEngine.cpp */,
 				4C21CB232A2D823800DD20BE /* State.h */,
 				4C21CB242A2D823800DD20BE /* State.cpp */,
 				4C21CB2B2A2ED98400DD20BE /* renderer_enums.h */,
@@ -432,6 +437,7 @@
 				4C21CB2A2A2EBDD300DD20BE /* ShipTypes.cpp in Sources */,
 				4C21CB182A2D201100DD20BE /* ECS.cpp in Sources */,
 				4C21CA952A2B059800DD20BE /* models.cpp in Sources */,
+				4C21CB342A302C3F00DD20BE /* GameEngine.cpp in Sources */,
 				4C21CB0F2A2D201100DD20BE /* FLGL_Presets.cpp in Sources */,
 				4C21CB222A2D7DEB00DD20BE /* follower.cpp in Sources */,
 			);

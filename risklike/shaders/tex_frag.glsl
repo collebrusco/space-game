@@ -11,6 +11,9 @@ uniform vec2 uSpriteSheetCoords;
 out vec4 outColor;
 in vec2 iUV;
 
+//const float amount = 200.f;
+//vec2 gUV = (floor(iUV * amount) + 0.5) / amount;
+
 void main(){
     vec2 normTexCoords = vec2(0.0);
     normTexCoords.x = ((uSpriteSheetCoords.x * 64) + (iUV.x * uSpriteWH.x)) / 1024.0;

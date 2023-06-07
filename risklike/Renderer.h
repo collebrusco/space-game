@@ -15,7 +15,7 @@
 #include "c/render.h"
 #include "c/texture.h"
 #include "renderer_enums.h"
-#include "State.h"
+//#include "State.h"
 
 /*
  Place render components on each entity to be rendered.
@@ -23,17 +23,17 @@
  call render system to draw
  */
 
-class Renderer {
-private:
-    entID camera;
-    void sync_camera(ECS& scene);
-public:
-//    Renderer();
-//    ~Renderer();
-    void use_camera(entID e);
-    Camera* fetch_camera(ECS& scene);
-    void render_system(ECS& scene);
-    void destroy();
-};
+//class Renderer {
+//private:
+//    entID camera;
+//    void sync_camera(ECS& scene);
+//public:
+////    Renderer();
+////    ~Renderer();
+//    void use_camera(entID e);
+//    Camera* fetch_camera(ECS& scene);
+//    void render_system(GameEngine* eng);
+//    void destroy();
+//};
 
 #endif /* Renderer_h */
