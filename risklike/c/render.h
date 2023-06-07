@@ -9,11 +9,12 @@
 #ifndef render_h
 #define render_h
 #include "../lib/flgl/flgl.h"
+#include "renderer_enums.h"
 
 struct Render {
-    MeshDetails vao;
-    Shader shader;
-    Render(MeshDetails v, Shader s);
+    MeshName vao;
+    ShaderName shader;
+    Render(MeshName v, ShaderName s);
 };
 
 #endif /* render_h */

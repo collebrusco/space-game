@@ -6,7 +6,8 @@
 //
 //
 
-#include "renderer.h"
+#include "Renderer.h"
+#include "assets/models.h"
 
 /*
  renderer fetches camera its given
@@ -16,14 +17,16 @@
  */
 
 static Graphics gl;
-static entID camera;
-//constexpr const static size_t LARGEST_CAMERA = (sizeof(OrthoCamera) > sizeof(PerspectiveCamera) ? sizeof(OrthoCamera) : sizeof(PerspectiveCamera));
 
-void renderer_use_camera(entID cam) {
+
+
+void Renderer::destroy() {}
+
+void Renderer::use_camera(entID cam) {
     camera = cam;
 }
 
-static Camera* fetch_camera(ECS& scene) {
+Camera* Renderer::fetch_camera(ECS& scene) {
     Camera* cam = scene.tryGetComp<OrthoCamera>(camera);
     if (!cam)
         cam = scene.tryGetComp<PerspectiveCamera>(camera);
@@ -32,7 +35,7 @@ static Camera* fetch_camera(ECS& scene) {
     return cam;
 }
 
-static void sync_camera(ECS& scene) {
+void Renderer::sync_camera(ECS& scene) {
     Camera* cam = fetch_camera(scene);
     
     Transform* trans = scene.tryGetComp<Transform>(camera);
@@ -46,15 +49,15 @@ static void sync_camera(ECS& scene) {
     });
 }
 
-void render_system(ECS& scene){
+void Renderer::render_system(ECS& scene) {
     sync_camera(scene);
-    for (auto e : scene.view<Render>()){
+    for (auto e : scene.view<Render>()) {
         auto& render = scene.getComp<Render>(e);
         if (Transform* trans = scene.tryGetComp<Transform>(e))
-            trans->sync(render.shader);
+            trans->sync(State::shaders[render.shader]);
         if (Texture* tex = scene.tryGetComp<Texture>(e))
-            tex->sync(render.shader);
-        render.shader.bind();
-        gl.DrawMesh(render.vao);
+            tex->sync(State::shaders[render.shader]);
+        State::shaders[render.shader].bind();
+        gl.DrawMesh(State::meshes[render.vao]);
     }
 }

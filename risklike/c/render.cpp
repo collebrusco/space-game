@@ -8,6 +8,6 @@
 
 #include "render.h"
 
-Render::Render(MeshDetails v, Shader s){
+Render::Render(MeshName v, ShaderName s){
     vao = v; shader = s;
 }

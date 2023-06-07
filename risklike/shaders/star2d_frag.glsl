@@ -19,6 +19,7 @@ uniform float uAspect;
 uniform float uRotation;
 
 uniform vec2 uGamePos;
+uniform vec2 uPGamePos;
 
 vec2 n_res = gl_FragCoord.xy / uRes;
 vec2 i_res = (vec2(n_res.x * uAspect, n_res.y) - vec2(uAspect / 2, 0.5));// * mat2(vec2(cos(-uRotation), sin(-uRotation)), vec2(-sin(-uRotation), cos(-uRotation)));
@@ -116,17 +117,91 @@ float perlin(vec2 pos){
     return perlin(pos, 0, vec2(0), vec2(1));
 }
 
-void main(){
-    vec4 clr = vec4(1.);
-    for (int i = 1; i < 5; i++){
-        float sn = perlin(i_res * 10 * i, 0.02, (uGamePos + vec2(0.5)) * float(i), vec2(float(i+1) * 2.), uRotation);
-        clr.xyz = vec3(0);
-        if (sn > 0.7){
-            clr.xyz = vec3(1.f);//mix(clr.xyz, vec3(1.f), (sn*sn)/0.81);
+float red_noise(float m, float dist) {
+    float res = 0;
+    int i;
+    for (i = 0; i < 7; i++) {
+        res += perlin(i_res, 0.02, uGamePos / (dist * 12.f), vec2((dist/12.f) * i));
+    }
+    return m * (res / i);
+}
+
+float blue_noise(float m, float dist) {
+    float res = 0;
+    int i;
+    for (i = 0; i < 7; i++) {
+        res += perlin(i_res, 0.02, uGamePos / (dist * 12.f), vec2((dist/16.f) * i));
+    }
+    return m * (res / i);
+}
+
+float green_noise(float m, float dist) {
+    float res = 0;
+    int i;
+    for (i = 0; i < 7; i++) {
+        res += perlin(i_res, 0.02, uGamePos / (dist * 10.f), vec2((dist/16.f) * i));
+    }
+    return m * (res / i);
+}
+
+#define STAR_COLOR vec4(0.7f, 0.7f, 0.69f, 1.f)
+bool star() {
+//    float sn = 0;
+//    int i;
+//    bool res = false;
+//    for (i = 1; i < 3; i++){
+//        float sn = perlin(i_res * 10 * i, 100.f, (uGamePos + vec2(0.5)) * float(i), vec2(float(i+1) * 2.), uRotation);
+//        res = (sn > 0.7);
+////        sn += perlin(i_res, 0.02, (uGamePos + vec2(0.5)) / float(i * 80), vec2(50.) * i, uRotation);
+////        return (sn > 0.7);
+//    }
+//    return res;
+//    bool star = false;
+    for (int i = 1; i < 3; i++) {
+        float sn = perlin(i_res + ivec2(i, -i), 0.02, (uGamePos + vec2(0.5)) / vec2(float((i<<1) + 200)), vec2(300.f / float((i))));
+        if (sn > 0.7) {
+            return true;
         }
     }
-    if (clr.xyz != vec3(1.)){ // remove if want to shade space
-        discard;
+    return false;
+}
+
+#define DUST_COLOR vec4(0.502f, 0.5f, 0.505f, 1.f)
+bool dust(vec2 gPos) {
+    float sn = perlin(i_res, 0.02, (gPos + vec2(0.5)) / vec2(5.f), vec2(150.f));
+    float sn1 = perlin(i_res + ivec2(8337), 0.02, (gPos - vec2(0.5)) / vec2(5.f), vec2(30.f));
+    return (sn > 0.7) && (sn1 > 0.65);
+}
+
+bool dust() {
+    vec2 diff = uPGamePos - uGamePos;
+    diff /= 4.f;
+    for (int i = 0; i < 3; i++) {
+        if (dust(uGamePos + (float(i) * diff))) {
+            return true;
+        }
     }
+    return false;
+}
+
+void main(){
+    vec4 clr = vec4(1.);
+    float sn = perlin(i_res * 100, 0.02, (uGamePos + vec2(0.5)), vec2(2.), uRotation);
+    clr.xyz = vec3(0);
+    if (star()){
+        clr = STAR_COLOR;
+    } else
+        if (dust()) {
+        clr = DUST_COLOR;
+    } else {
+        const float bt = 4;
+        clr.r = red_noise(0.1f * bt, 10.f);
+        clr.g = green_noise(0.05f * bt, 12.f);
+        clr.b = blue_noise(0.1f * bt, 4.f);
+        clr.xyz = max(vec3(0.f), clr.xyz - 0.15);
+    }
+//    if (clr.xyz != vec3(1.)){ // remove if want to shade space
+//        discard;
+//    }
     outColor = clr;
 }

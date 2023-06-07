@@ -17,6 +17,7 @@ struct DifferentialFollower {
     float coeff;
     DifferentialFollower(entID tar, float co);
     void update(ECS& scene, entID selfID);
+    static void follower_system(ECS& scene);
 };
 
 #endif /* follower_h */

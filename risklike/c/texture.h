@@ -10,6 +10,7 @@
 #define texture_h
 #include <glm/glm.hpp>
 #include "../lib/flgl/flgl.h"
+#include "../renderer_enums.h"
 
 struct Texture {
     TEXTURE_SLOT slot;
