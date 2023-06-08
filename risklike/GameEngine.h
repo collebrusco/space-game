@@ -11,7 +11,6 @@
 #include "lib/ecs/ECS.h"
 #include "lib/flgl/flgl.h"
 #include "lib/sw/Stopwatch.h"
-#include "Renderer.h"
 #include "renderer_enums.h"
 
 class GameEngine {
@@ -32,8 +31,6 @@ protected:
         entID camera;
         void sync_camera(ECS& scene);
     public:
-    //    Renderer();
-    //    ~Renderer();
         void use_camera(entID e);
         Camera* fetch_camera(ECS& scene);
         void render_system(GameEngine* eng);

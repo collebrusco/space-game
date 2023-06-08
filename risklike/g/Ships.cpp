@@ -6,14 +6,14 @@
 //
 //
 
-#include "ShipTypes.h"
+#include "Ships.h"
 static Graphics gl;
 
 ShipTypeObject* ShipTypeObject::ships;
 
 void ShipTypeObject::initShips() {
     ships = new ShipTypeObject[SHIP_LAST + 1];
-    
+    // TODO: texture name here, have engine init them
     ships[SHIP_ASP].setMesh(MESH_ASP);
     ships[SHIP_ASP].setShader(SHADER_SHIP);
     ships[SHIP_ASP].setTexture(Texture(gl.loader.UploadTexture("atlas", true), glm::ivec2(256), glm::vec2(0.)));
@@ -52,3 +52,6 @@ void ShipTypeObject::setShader(ShaderName s) {
     shader = s;
 }
 
+
+
+Ship::Ship(ShipType st) : type(ShipTypeObject::getShip(st)){}

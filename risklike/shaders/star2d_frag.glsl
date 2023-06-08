@@ -17,6 +17,7 @@ uniform float uTime;
 uniform vec2 uRes;
 uniform float uAspect;
 uniform float uRotation;
+uniform float uZoom;
 
 uniform vec2 uGamePos;
 uniform vec2 uPGamePos;
@@ -144,7 +145,7 @@ float green_noise(float m, float dist) {
     return m * (res / i);
 }
 
-#define STAR_COLOR (vec4(0.7f, 0.7f, 0.69f, 1.f) * (perlin(i_res * 50.f, 0.2f) + 0.3))
+#define STAR_COLOR (vec4(0.7f, 0.6f, 0.67f, 1.f) * (perlin(i_res * 50.f, 0.2f) + 0.3))
 bool star() {
 //    float sn = 0;
 //    int i;
@@ -168,15 +169,16 @@ bool star() {
 
 #define DUST_COLOR vec4(0.502f, 0.5f, 0.505f, 1.f)
 bool dust(vec2 gPos) {
-    float sn = perlin(i_res, 0.02, (gPos + vec2(0.5)) / vec2(5.f), vec2(150.f));
-    float sn1 = perlin(i_res + ivec2(8337), 0.02, (gPos - vec2(0.5)) / vec2(5.f), vec2(30.f));
-    return (sn > 0.7) && (sn1 > 0.65);
+    float sn = perlin(i_res,                0.02, (gPos + vec2(0.5)) / vec2(5.f * uZoom), vec2(150.f * uZoom));
+    if (sn < 0.685) { return false; }
+    float sn1 = perlin(i_res, 0.02, (gPos + vec2(0.22)) / vec2(5.f * uZoom), vec2(150.f * uZoom));
+    return (sn1 > 0.65);
 }
 
 bool dust() {
     vec2 diff = uPGamePos - uGamePos;
-    diff /= 4.f;
-    for (int i = 0; i < 3; i++) {
+    diff /= 4.;
+    for (int i = 0; i < 10; i++) {
         if (dust(uGamePos + (float(i) * diff))) {
             return true;
         }

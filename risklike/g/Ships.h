@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef ship_types_h
-#define ship_types_h
+#ifndef ships_h
+#define ships_h
 
 #include "../lib/flgl/flgl.h"
 #include "../c/all.h"
@@ -29,7 +29,6 @@ class ShipTypeObject {
     MeshName mesh;
     Texture texture;
     ShaderName shader;
-    // hull strength, mass, acceleration, fun stuff! Weapon[], Defense[], System[] ooooh boy
 public:
     ShipTypeObject() = default;
     ShipTypeObject(MeshName m, Texture t, ShaderName s);
@@ -46,4 +45,12 @@ public:
     void setShader(ShaderName s);
 };
 
-#endif /* ship_types_h */
+// hull strength, mass, acceleration, fun stuff! Weapon[], Defense[], System[] ooooh boy
+class Ship {
+private:
+    ShipTypeObject const& type;
+public:
+    Ship(ShipType st);
+};
+
+#endif /* ships_h */

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C21CA952A2B059800DD20BE /* models.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CA942A2B059800DD20BE /* models.cpp */; };
-		4C21CA9B2A2C67A700DD20BE /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CA9A2A2C67A700DD20BE /* Renderer.cpp */; };
 		4C21CA9E2A2C6FD600DD20BE /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CA9D2A2C6FD600DD20BE /* transform.cpp */; };
 		4C21CB0E2A2D201100DD20BE /* Stopwatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CADC2A2D201100DD20BE /* Stopwatch.cpp */; };
 		4C21CB0F2A2D201100DD20BE /* FLGL_Presets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CAE02A2D201100DD20BE /* FLGL_Presets.cpp */; };
@@ -24,9 +23,9 @@
 		4C21CB1C2A2D283C00DD20BE /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB1B2A2D283C00DD20BE /* render.cpp */; };
 		4C21CB1F2A2D28BF00DD20BE /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB1E2A2D28BF00DD20BE /* texture.cpp */; };
 		4C21CB222A2D7DEB00DD20BE /* follower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB212A2D7DEB00DD20BE /* follower.cpp */; };
-		4C21CB252A2D823800DD20BE /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB242A2D823800DD20BE /* State.cpp */; };
-		4C21CB2A2A2EBDD300DD20BE /* ShipTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB292A2EBDD300DD20BE /* ShipTypes.cpp */; };
+		4C21CB2A2A2EBDD300DD20BE /* Ships.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB292A2EBDD300DD20BE /* Ships.cpp */; };
 		4C21CB342A302C3F00DD20BE /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB332A302C3F00DD20BE /* GameEngine.cpp */; };
+		4C21CB372A30442100DD20BE /* RiskLike.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C21CB362A30442100DD20BE /* RiskLike.cpp */; };
 		4C39E7732A2A8E9A00CFC7EB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C39E7722A2A8E9A00CFC7EB /* main.cpp */; };
 		4C39E77B2A2A8EAC00CFC7EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77A2A2A8EAC00CFC7EB /* OpenGL.framework */; };
 		4C39E77D2A2A8EB000CFC7EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77C2A2A8EB000CFC7EB /* CoreGraphics.framework */; };
@@ -52,8 +51,6 @@
 		4C21CA962A2B077D00DD20BE /* asp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asp.png; sourceTree = "<group>"; };
 		4C21CA972A2B388400DD20BE /* star2d_frag.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = star2d_frag.glsl; sourceTree = "<group>"; };
 		4C21CA982A2B389A00DD20BE /* fullscreen_vert.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fullscreen_vert.glsl; sourceTree = "<group>"; };
-		4C21CA992A2C67A700DD20BE /* Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
-		4C21CA9A2A2C67A700DD20BE /* Renderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
 		4C21CA9C2A2C6FD600DD20BE /* transform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
 		4C21CA9D2A2C6FD600DD20BE /* transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
 		4C21CAD82A2D201100DD20BE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -108,14 +105,14 @@
 		4C21CB1E2A2D28BF00DD20BE /* texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
 		4C21CB202A2D7DEB00DD20BE /* follower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = follower.h; sourceTree = "<group>"; };
 		4C21CB212A2D7DEB00DD20BE /* follower.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = follower.cpp; sourceTree = "<group>"; };
-		4C21CB232A2D823800DD20BE /* State.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
-		4C21CB242A2D823800DD20BE /* State.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = State.cpp; sourceTree = "<group>"; };
 		4C21CB262A2EBD1800DD20BE /* all.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = all.h; sourceTree = "<group>"; };
-		4C21CB282A2EBDD300DD20BE /* ShipTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShipTypes.h; sourceTree = "<group>"; };
-		4C21CB292A2EBDD300DD20BE /* ShipTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShipTypes.cpp; sourceTree = "<group>"; };
+		4C21CB282A2EBDD300DD20BE /* Ships.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ships.h; sourceTree = "<group>"; };
+		4C21CB292A2EBDD300DD20BE /* Ships.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ships.cpp; sourceTree = "<group>"; };
 		4C21CB2B2A2ED98400DD20BE /* renderer_enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = renderer_enums.h; sourceTree = "<group>"; };
 		4C21CB322A302C3F00DD20BE /* GameEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
 		4C21CB332A302C3F00DD20BE /* GameEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameEngine.cpp; sourceTree = "<group>"; };
+		4C21CB352A30442100DD20BE /* RiskLike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RiskLike.h; sourceTree = "<group>"; };
+		4C21CB362A30442100DD20BE /* RiskLike.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RiskLike.cpp; sourceTree = "<group>"; };
 		4C39E76F2A2A8E9A00CFC7EB /* risklike */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = risklike; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C39E7722A2A8E9A00CFC7EB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4C39E77A2A2A8EAC00CFC7EB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -286,8 +283,8 @@
 		4C21CB272A2EBD7100DD20BE /* g */ = {
 			isa = PBXGroup;
 			children = (
-				4C21CB282A2EBDD300DD20BE /* ShipTypes.h */,
-				4C21CB292A2EBDD300DD20BE /* ShipTypes.cpp */,
+				4C21CB282A2EBDD300DD20BE /* Ships.h */,
+				4C21CB292A2EBDD300DD20BE /* Ships.cpp */,
 			);
 			path = g;
 			sourceTree = "<group>";
@@ -316,13 +313,11 @@
 				4C39E7C42A2A9CC200CFC7EB /* assets */,
 				4C39E7C62A2AA04E00CFC7EB /* shaders */,
 				4C39E7722A2A8E9A00CFC7EB /* main.cpp */,
+				4C21CB352A30442100DD20BE /* RiskLike.h */,
+				4C21CB362A30442100DD20BE /* RiskLike.cpp */,
 				4C21CB322A302C3F00DD20BE /* GameEngine.h */,
 				4C21CB332A302C3F00DD20BE /* GameEngine.cpp */,
-				4C21CB232A2D823800DD20BE /* State.h */,
-				4C21CB242A2D823800DD20BE /* State.cpp */,
 				4C21CB2B2A2ED98400DD20BE /* renderer_enums.h */,
-				4C21CA992A2C67A700DD20BE /* Renderer.h */,
-				4C21CA9A2A2C67A700DD20BE /* Renderer.cpp */,
 				4C21CB272A2EBD7100DD20BE /* g */,
 				4C21CB192A2D280D00DD20BE /* c */,
 			);
@@ -424,6 +419,7 @@
 				4C39E7732A2A8E9A00CFC7EB /* main.cpp in Sources */,
 				4C21CB162A2D201100DD20BE /* flgl_math.cpp in Sources */,
 				4C21CB152A2D201100DD20BE /* GL_Loader.cpp in Sources */,
+				4C21CB372A30442100DD20BE /* RiskLike.cpp in Sources */,
 				4C21CB142A2D201100DD20BE /* Graphics.cpp in Sources */,
 				4C21CB102A2D201100DD20BE /* Camera.cpp in Sources */,
 				4C21CB172A2D201100DD20BE /* Vertex.cpp in Sources */,
@@ -431,10 +427,8 @@
 				4C21CB112A2D201100DD20BE /* Window.cpp in Sources */,
 				4C21CA9E2A2C6FD600DD20BE /* transform.cpp in Sources */,
 				4C21CB1C2A2D283C00DD20BE /* render.cpp in Sources */,
-				4C21CA9B2A2C67A700DD20BE /* Renderer.cpp in Sources */,
 				4C21CB1F2A2D28BF00DD20BE /* texture.cpp in Sources */,
-				4C21CB252A2D823800DD20BE /* State.cpp in Sources */,
-				4C21CB2A2A2EBDD300DD20BE /* ShipTypes.cpp in Sources */,
+				4C21CB2A2A2EBDD300DD20BE /* Ships.cpp in Sources */,
 				4C21CB182A2D201100DD20BE /* ECS.cpp in Sources */,
 				4C21CA952A2B059800DD20BE /* models.cpp in Sources */,
 				4C21CB342A302C3F00DD20BE /* GameEngine.cpp in Sources */,

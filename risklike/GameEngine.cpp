@@ -7,6 +7,7 @@
 //
 
 #include "GameEngine.h"
+#include "c/all.h"
 static Graphics gl;
 
 Shader GameEngine::shaders[SHADER_LAST + 1];
