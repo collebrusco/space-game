@@ -14,11 +14,15 @@
 #include "GameEngine.h"
 #include "c/all.h"
 #include "g/Ships.h"
+#include "SkySystem.h"
+#include "ActionSystem.h"
 
 class RiskLike : public GameEngine {
 public:
     RiskLike() : GameEngine("risklike", 1280, 720) {}
+//                 ss(this) {}
 private:
+//    SkySystem ss;
     void userCreate()           override;
     void userUpdate(float dt)   override;
     void userDestroy()          override;
@@ -30,6 +34,8 @@ private:
     void fly_system(float dt);
     void bg_init();
     void bg_system();
+    
+//    ActionSystem actionSystem;
 };
 
 #endif /* RiskLike_h */

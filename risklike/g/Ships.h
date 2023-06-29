@@ -45,10 +45,16 @@ public:
     void setShader(ShaderName s);
 };
 
+struct Engine {
+    float thrust;
+    Engine(float t);
+};
+
 // hull strength, mass, acceleration, fun stuff! Weapon[], Defense[], System[] ooooh boy
 class Ship {
 private:
     ShipTypeObject const& type;
+    Engine engine;
 public:
     Ship(ShipType st);
 };

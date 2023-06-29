@@ -29,6 +29,7 @@ void RiskLike::player_init() {
     scene.addComp<Transform>(e);
     scene.addComp<Render>(e, asp.getMesh(), asp.getShader());
     scene.addComp<Texture>(e, asp.getTexture());
+//    scene.addComp<Actor*>(e, new PlayerActor(e));
 }
 void RiskLike::userCreate() {
     meshes[MESH_ASP] = gl.loader.UploadMesh(asp_mesh);
@@ -52,6 +53,7 @@ void RiskLike::userUpdate(float dt) {
     
     std::cout << 1 / dt << "fps\n";
     
+//    actionSystem.execute(dt);
     roll_system(dt);
     fly_system(dt);
     DifferentialFollower::follower_system(scene);
@@ -113,7 +115,6 @@ void RiskLike::fly_system(float dt) {
     
     trans.pos += velo;
     trans.rotation.z += av;
-//        std::cout << trans.pos.x << ", " << trans.pos.y << "\n";
 }
 
 void RiskLike::bg_init() {
@@ -129,7 +130,6 @@ void RiskLike::bg_system() {
     shaders[SHADER_STARS].uFloat("uAspect", gl.getWindow().aspect);
     shaders[SHADER_STARS].uVec2("uGamePos", vec2(cam->readPos().x, cam->readPos().y) / 5.f);
     shaders[SHADER_STARS].uVec2("uPGamePos", pGamePos / 5.f);
-    shaders[SHADER_STARS].uFloat("uRotation", glm::radians(scene.getComp<Transform>(player).rotation.z));
     shaders[SHADER_STARS].uFloat("uZoom", ((OrthoCamera*)cam)->readViewWidth() / 10.f);
     pGamePos = vec2(cam->readPos().x, cam->readPos().y);
 }

@@ -31,6 +31,8 @@
 		4C39E77D2A2A8EB000CFC7EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77C2A2A8EB000CFC7EB /* CoreGraphics.framework */; };
 		4C39E77F2A2A8EB400CFC7EB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E77E2A2A8EB400CFC7EB /* IOKit.framework */; };
 		4C39E7812A2A8EC700CFC7EB /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C39E7802A2A8EC700CFC7EB /* libglfw.3.3.dylib */; };
+		4C630B4C2A33CC73000A3DAB /* SkySystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C630B4B2A33CC73000A3DAB /* SkySystem.cpp */; };
+		4C630B522A341DFA000A3DAB /* ActionSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4C630B512A341DFA000A3DAB /* ActionSystem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,6 +124,10 @@
 		4C39E7C52A2A9CC200CFC7EB /* sprite_sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_sheet.png; sourceTree = "<group>"; };
 		4C39E7C72A2AA09800CFC7EB /* mvp_vert.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = mvp_vert.glsl; sourceTree = "<group>"; };
 		4C39E7C82A2AA0AC00CFC7EB /* tex_frag.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = tex_frag.glsl; sourceTree = "<group>"; };
+		4C630B4A2A33CC73000A3DAB /* SkySystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkySystem.h; sourceTree = "<group>"; };
+		4C630B4B2A33CC73000A3DAB /* SkySystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkySystem.cpp; sourceTree = "<group>"; };
+		4C630B502A341DFA000A3DAB /* ActionSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSystem.h; sourceTree = "<group>"; };
+		4C630B512A341DFA000A3DAB /* ActionSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ActionSystem.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,11 +319,15 @@
 				4C39E7C42A2A9CC200CFC7EB /* assets */,
 				4C39E7C62A2AA04E00CFC7EB /* shaders */,
 				4C39E7722A2A8E9A00CFC7EB /* main.cpp */,
-				4C21CB352A30442100DD20BE /* RiskLike.h */,
-				4C21CB362A30442100DD20BE /* RiskLike.cpp */,
 				4C21CB322A302C3F00DD20BE /* GameEngine.h */,
 				4C21CB332A302C3F00DD20BE /* GameEngine.cpp */,
+				4C21CB352A30442100DD20BE /* RiskLike.h */,
+				4C21CB362A30442100DD20BE /* RiskLike.cpp */,
 				4C21CB2B2A2ED98400DD20BE /* renderer_enums.h */,
+				4C630B4A2A33CC73000A3DAB /* SkySystem.h */,
+				4C630B4B2A33CC73000A3DAB /* SkySystem.cpp */,
+				4C630B502A341DFA000A3DAB /* ActionSystem.h */,
+				4C630B512A341DFA000A3DAB /* ActionSystem.cpp */,
 				4C21CB272A2EBD7100DD20BE /* g */,
 				4C21CB192A2D280D00DD20BE /* c */,
 			);
@@ -425,6 +435,7 @@
 				4C21CB172A2D201100DD20BE /* Vertex.cpp in Sources */,
 				4C21CB132A2D201100DD20BE /* Shader.cpp in Sources */,
 				4C21CB112A2D201100DD20BE /* Window.cpp in Sources */,
+				4C630B4C2A33CC73000A3DAB /* SkySystem.cpp in Sources */,
 				4C21CA9E2A2C6FD600DD20BE /* transform.cpp in Sources */,
 				4C21CB1C2A2D283C00DD20BE /* render.cpp in Sources */,
 				4C21CB1F2A2D28BF00DD20BE /* texture.cpp in Sources */,
@@ -432,6 +443,7 @@
 				4C21CB182A2D201100DD20BE /* ECS.cpp in Sources */,
 				4C21CA952A2B059800DD20BE /* models.cpp in Sources */,
 				4C21CB342A302C3F00DD20BE /* GameEngine.cpp in Sources */,
+				4C630B522A341DFA000A3DAB /* ActionSystem.cpp in Sources */,
 				4C21CB0F2A2D201100DD20BE /* FLGL_Presets.cpp in Sources */,
 				4C21CB222A2D7DEB00DD20BE /* follower.cpp in Sources */,
 			);

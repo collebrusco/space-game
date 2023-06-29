@@ -16,7 +16,6 @@ in vec3 iPos;
 uniform float uTime;
 uniform vec2 uRes;
 uniform float uAspect;
-uniform float uRotation;
 uniform float uZoom;
 
 uniform vec2 uGamePos;
@@ -188,7 +187,7 @@ bool dust() {
 
 void main(){
     vec4 clr = vec4(1.);
-    float sn = perlin(i_res * 100, 0.02, (uGamePos + vec2(0.5)), vec2(2.), uRotation);
+    float sn = perlin(i_res * 100, 0.02, (uGamePos + vec2(0.5)), vec2(2.));
     clr.xyz = vec3(0);
     if (star()){
         clr = STAR_COLOR;

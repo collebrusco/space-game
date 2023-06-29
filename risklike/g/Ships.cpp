@@ -52,6 +52,10 @@ void ShipTypeObject::setShader(ShaderName s) {
     shader = s;
 }
 
+Ship::Ship(ShipType st) : type(ShipTypeObject::getShip(st)),
+                          engine(0.1f)
+{
+    
+}
 
-
-Ship::Ship(ShipType st) : type(ShipTypeObject::getShip(st)){}
+Engine::Engine(float t) : thrust(t) {}
