@@ -8,8 +8,8 @@
 
 #ifndef render_h
 #define render_h
-#include "../lib/flgl/flgl.h"
-#include "renderer_enums.h"
+#include "../lib/flgl/inc/flgl.h"
+#include "../renderer_enums.h"
 
 struct Render {
     MeshName vao;

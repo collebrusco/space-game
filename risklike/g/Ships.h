@@ -9,7 +9,7 @@
 #ifndef ships_h
 #define ships_h
 
-#include "../lib/flgl/flgl.h"
+#include "../lib/flgl/inc/flgl.h"
 #include "../c/all.h"
 
 /*

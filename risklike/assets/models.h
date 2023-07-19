@@ -10,7 +10,7 @@
 #define models_h
 
 #include <vector>
-#include "../lib/flgl/flgl/Vertex.h"
+#include "../lib/flgl/src/Vertex.h"
 
 extern const std::vector<Vertex> asp_vertices;
 extern const std::vector<uint32_t> asp_elements;

@@ -8,7 +8,8 @@
 
 #ifndef RiskLike_h
 #define RiskLike_h
-#include "lib/flgl/flgl.h"
+#include "lib/flgl/inc/flgl.h"
+#include "lib/flgl/inc/flgl_math.h"
 #include "lib/ecs/ECS.h"
 #include "lib/sw/Stopwatch.h"
 #include "GameEngine.h"

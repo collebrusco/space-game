@@ -9,7 +9,7 @@
 #ifndef common_comps_h
 #define common_comps_h
 #include <glm/glm.hpp>
-#include "../lib/flgl/flgl.h"
+#include "../lib/flgl/inc/flgl.h"
 
 struct Transform {
     glm::vec3 pos, rotation, scale, anchor;

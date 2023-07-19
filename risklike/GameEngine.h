@@ -9,7 +9,7 @@
 #ifndef GameEngine_h
 #define GameEngine_h
 #include "lib/ecs/ECS.h"
-#include "lib/flgl/flgl.h"
+#include "lib/flgl/inc/flgl.h"
 #include "lib/sw/Stopwatch.h"
 #include "renderer_enums.h"
 #include <unordered_map>

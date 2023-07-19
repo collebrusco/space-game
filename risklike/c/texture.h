@@ -9,7 +9,7 @@
 #ifndef texture_h
 #define texture_h
 #include <glm/glm.hpp>
-#include "../lib/flgl/flgl.h"
+#include "../lib/flgl/inc/flgl.h"
 #include "../renderer_enums.h"
 
 struct Texture {
