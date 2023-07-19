@@ -49,6 +49,7 @@ dirs:
 	mkdir -p ./$(BIN)
 
 libs:
+	git submodule update --update --init --recursive
 	cd lib/flgl/lib/glad && $(CC) -o src/glad.o -Iinclude -c src/glad.c
 	cd lib/flgl/lib/glfw && cmake . && make
 
